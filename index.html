@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashtarani - Premium Traditional Sarees</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            color: #1a1a2e;
+            line-height: 1.6;
+        }
+        
+        /* Navy Blue: #1a1a2e, #16213e */
+        /* Golden: #d4af37, #f4c430 */
+        
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #d4af37;
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #d4af37;
+            text-shadow: 2px 2px 4px rgba(212, 175, 55, 0.3);
+            letter-spacing: 2px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #d4af37;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+        
+        .nav-links a:hover {
+            background: rgba(212, 175, 55, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="%23d4af37" opacity="0.1"/></svg>') repeat-x;
+            opacity: 0.1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #d4af37;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #f4c430;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4af37 0%, #f4c430 100%);
+            color: #1a1a2e;
+            padding: 1rem 3rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+        }
+        
+        .collection {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #1a1a2e;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #d4af37, #f4c430);
+            border-radius: 2px;
+        }
+        
+        .saree-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .saree-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .saree-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            border-color: #d4af37;
+        }
+        
+        .saree-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        
+        .saree-info {
+            padding: 1.5rem;
+            background: linear-gradient(to bottom, white, #f9f9f9);
+        }
+        
+        .saree-info h3 {
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .saree-info p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .price {
+            color: #d4af37;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .features {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+        }
+        
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 15px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            background: rgba(212, 175, 55, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #d4af37;
+        }
+        
+        .feature-card h3 {
+            color: #f4c430;
+            margin-bottom: 1rem;
+        }
+        
+        .about {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+        
+        .about p {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        footer {
+            background: #1a1a2e;
+            color: #d4af37;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .contact-info {
+            margin-top: 1rem;
+        }
+        
+        .contact-info a {
+            color: #f4c430;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: all 0.3s;
+        }
+        
+        .contact-info a:hover {
+            color: #d4af37;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">ASHTARANI</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#collection">Collection</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Welcome to Ashtarani</h1>
+        <p>Exquisite Traditional Sarees for Every Occasion</p>
+        <a href="#collection" class="cta-button">Explore Collection</a>
+    </section>
+
+    <section class="collection" id="collection">
+        <h2 class="section-title">Our Premium Collection</h2>
+        <div class="saree-grid">
+            <div class="saree-card">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/563f1f3c-3a85-4745-9059-1723425efe2a/2025-12-01T06-59-01-009Z-c14ac088-chat-image-1764572340989-1.jpg" alt="Black & Red Banarasi Saree" class="saree-image">
+                <div class="saree-info">
+                    <h3>Elegant Black Banarasi</h3>
+                    <p>Stunning black saree with intricate silver zari work and vibrant red border. Perfect for weddings and special occasions.</p>
+                    <div class="price">₹ Contact for Price</div>
+                </div>
+            </div>
+            
+            <div class="saree-card">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/563f1f3c-3a85-4745-9059-1723425efe2a/2025-12-01T06-59-01-146Z-a2ff69ec-chat-image-1764572341124-2.jpg" alt="Teal Paithani Saree" class="saree-image">
+                <div class="saree-info">
+                    <h3>Royal Teal Paithani</h3>
+                    <p>Gorgeous teal saree with traditional paithani motifs and vibrant multicolor border featuring peacock designs.</p>
+                    <div class="price">₹ Contact for Price</div>
+                </div>
+            </div>
+            
+            <div class="saree-card">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/563f1f3c-3a85-4745-9059-1723425efe2a/2025-12-01T06-59-01-389Z-f4160e71-chat-image-1764572341367-3.jpg" alt="Pink Kanjivaram Saree" class="saree-image">
+                <div class="saree-info">
+                    <h3>Vibrant Pink Kanjivaram</h3>
+                    <p>Exquisite pink and yellow saree with traditional temple motifs and rich golden zari work throughout.</p>
+                    <div class="price">₹ Contact for Price</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2 class="section-title" style="color: #d4af37;">Why Choose Ashtarani</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3>Premium Quality</h3>
+                <p>Handpicked finest silk and traditional weaves from master artisans across India</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>Authentic Designs</h3>
+                <p>Traditional patterns and motifs crafted with intricate zari work and embellishments</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💎</div>
+                <h3>Exclusive Collection</h3>
+                <p>Curated selection of rare and unique sarees for discerning customers</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚚</div>
+                <h3>Nationwide Delivery</h3>
+                <p>Safe and secure delivery to your doorstep anywhere in India</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2 class="section-title">About Ashtarani</h2>
+        <p>
+            Ashtarani is a celebration of India's rich textile heritage. We bring you the finest collection of traditional sarees, 
+            each piece carefully selected for its craftsmanship, authenticity, and timeless beauty. From vibrant Paithani to elegant 
+            Banarasi, from rich Kanjivaram to delicate Chanderi, our collection represents the best of Indian handloom traditions. 
+            Every saree tells a story of skilled artisans, age-old techniques, and the enduring elegance of Indian culture.
+        </p>
+    </section>
+
+    <footer id="contact">
+        <h3>Get in Touch</h3>
+        <div class="contact-info">
+            <a href="mailto:info@ashtarani.com">📧 info@ashtarani.com</a>
+            <a href="tel:+919876543210">📞 +91 98765 43210</a>
+        </div>
+        <p style="margin-top: 2rem; color: #f4c430;">© 2025 Ashtarani. All Rights Reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Crafted with ❤️ for Traditional Elegance</p>
+    </footer>
+</body>
+</html>
