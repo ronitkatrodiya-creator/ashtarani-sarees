@@ -20,7 +20,7 @@
         header {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             color: #d4af37;
-            padding: 2rem 0;
+            padding: 1.5rem 0;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         
@@ -33,8 +33,21 @@
             padding: 0 2rem;
         }
         
-        .logo {
-            font-size: 2.5rem;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo-image {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(2px 2px 4px rgba(212, 175, 55, 0.3));
+        }
+        
+        .logo-text {
+            font-size: 2rem;
             font-weight: bold;
             color: #d4af37;
             text-shadow: 2px 2px 4px rgba(212, 175, 55, 0.3);
@@ -245,6 +258,13 @@
             margin-top: 4rem;
         }
         
+        .footer-logo {
+            height: 60px;
+            width: auto;
+            margin-bottom: 1rem;
+            filter: brightness(1.2);
+        }
+        
         .contact-info {
             margin-top: 1rem;
         }
@@ -300,13 +320,23 @@
                 font-size: 1.2rem;
             }
             
+            nav {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
             .nav-links {
                 flex-direction: column;
                 gap: 1rem;
+                text-align: center;
             }
             
-            .logo {
-                font-size: 2rem;
+            .logo-image {
+                height: 60px;
+            }
+            
+            .logo-text {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -314,7 +344,10 @@
 <body>
     <header>
         <nav>
-            <div class="logo">ASHTARANI</div>
+            <div class="logo-container">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/563f1f3c-3a85-4745-9059-1723425efe2a/2025-12-01T07-05-05-802Z-497b1817-chat-image-1764572705774-0.jpg" alt="Ashtarani Logo" class="logo-image">
+                <div class="logo-text">ASHTARANI</div>
+            </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#collection">Collection</a></li>
@@ -399,6 +432,7 @@
     </section>
 
     <footer id="contact">
+        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/563f1f3c-3a85-4745-9059-1723425efe2a/2025-12-01T07-05-05-802Z-497b1817-chat-image-1764572705774-0.jpg" alt="Ashtarani Logo" class="footer-logo">
         <h3>Get in Touch</h3>
         <div class="contact-info">
             <a href="mailto:info@ashtarani.com">📧 info@ashtarani.com</a>
